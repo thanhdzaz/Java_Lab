@@ -2,21 +2,28 @@ package Student;
 
 import java.util.Scanner;
 
-public class Students {
-    String name,classes;
-    int age;
-
-    public void nhapData(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap ten: ");
-        this.name = sc.nextLine();
-        System.out.println("Nhap lop: ");
-        this.classes = sc.nextLine();
-        System.out.println("Nhap tuoi: ");
-        this.age = sc.nextInt();
-
-    }
-    public void xuatData(){
-        System.out.println("name:"+this.name);
-    }
-}
+class Students {
+    String name;
+    String id;
+  
+    // Student(String name, String id) {
+    //   this.name = name;
+    //   this.id = id;
+    // }
+  
+  public void nhapData (){
+    Scanner scan = new Scanner(System.in);
+    System.out.print("nhap ten  : ");
+    this.name = scan.nextLine();
+    System.out.print("nhap id  : ");
+    this.id = scan.nextLine();
+    scan.close();
+  }
+  
+  
+  public void xuatData(){
+    System.out.println("Name: "+this.name);
+    System.out.println("Id: "+this.id);
+  }
+  
+  }
