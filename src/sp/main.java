@@ -2,6 +2,7 @@ package sp;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Stream;
 
 public class main {
     public static void main(String[] args) {
@@ -22,20 +23,19 @@ public class main {
         });
 
         System.out.println("<==========================>");
-        Collections.sort(list,(a,b)->{
-           return (int) (a.price - b.price);
-        });
+        Collections.sort(list,(a,b)-> (a.name.equals(b.name)) ? 1 : -1);
         list.forEach(e->{
             e.show();
         });
 
         System.out.println("<==========================>");
-        Collections.sort(list,(a,b)->{
-            return  (a.name.equalsIgnoreCase(b.name) == true) ? 0 : 1;
-        });
+        Collections.sort(list,(a,b)-> (int) (a.price - b.price));
         list.forEach(e->{
             e.show();
         });
+        System.out.println("<==========================>");
+        Stream<Product> tmp = list.stream().filter(a->a.price > 2);
+        tmp.forEach(e-> e.show());
     }
 }
 
